@@ -53,7 +53,7 @@ public class ChallengeName extends reuseableCode{
 	@FindBy(xpath = "//button[text()='Create Form']")
 	WebElement challengeCreateForm;
 	By waiter =By.xpath("//select[@class='form-control']");
-	public void challengeName() {
+	public void challengeName() throws InterruptedException {
 		waitForElementToBeClickableWebelement(challengeText);
 			challengeText.click();
 			waitForElementToBeClickableWebelement(internalChallenges);
@@ -69,7 +69,7 @@ public class ChallengeName extends reuseableCode{
 			challengeCreationSubmit.click();
 			waitForElementToBeClickable(waiter);
 			challengeNameSelect.click();
-			
+			Thread.sleep(1000);
 			select=new Select(challengeNameSelect);
 			select.selectByVisibleText(challengename);
 		
